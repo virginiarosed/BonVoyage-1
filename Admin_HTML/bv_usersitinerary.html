@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BondVoyage │ Admin User's Itinerary</title>
+    <link rel="stylesheet" href="../CSS/bv_usersitinerary.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="icon" href="../Images/favicon-32x32.png" type="image/png" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="sidebar">
+        <div class="logo">
+          <img src="../Images/bv_logo.png" alt="Logo" class="logo-img" />
+        </div>
+        <ul class="menu">
+          <li>
+            <a href="../Admin_HTML/bv_adminhome.html"
+              ><img src="../Images/bv_home.png" alt="Home Icon" /><span
+                >Home</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href="../Admin_HTML/bv_users.html"
+              ><img src="../Images/bv_users.png" alt="Users Icon" /><span
+                >Users</span
+              ></a
+            >
+          </li>
+          <li class="active">
+            <a href="../Admin_HTML/bv_usersitinerary.html"
+              ><img
+                src="../Images/bv_usersitinerary.png"
+                alt="Users Itinerary Icon"
+              /><span>User's Itinerary</span></a
+            >
+          </li>
+          <li>
+            <a href="../Admin_HTML/bv_standard.html"
+              ><img
+                src="../Images/bv_standard.png"
+                alt="Standard Itinerary Icon"
+              /><span>Standard Itinerary</span></a
+            >
+          </li>
+          <li>
+            <a href="../Admin_HTML/bv_placeguide.html"
+              ><img
+                src="../Images/bv_placeguide.png"
+                alt="Place Guide Icon"
+              /><span>Place Guide</span></a
+            >
+          </li>
+          <li>
+            <a href="../PHP/bv_adminlogout.php"
+              ><img
+                src="../Images/bv_logout.png"
+                alt="Log Out Icon"
+                style="width: 33px; height: auto"
+              /><span>Log Out</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <main class="content">
+        <img
+          src="../Images/users-itinerary_title.png"
+          alt="User's Itinerary Title"
+          class="usersitinerary-img"
+        />
+
+        <div class="itinerary-output-container" style="flex-flow: wrap">
+          <!-- Should fetched and display here the submitted customized itineraries by the users -->
+          <!-- Sample Itinerary #1 -->
+          <div class="itinerary-sample">
+            <h3>Itinerary ID #1</h3>
+            <p><strong>Client Name:</strong> Name</p>
+            <p><strong>Destination:</strong> Destination</p>
+            <p><strong>Duration:</strong> 3 Days, 2 Nights</p>
+            <p><strong>Lodging:</strong> Hotel</p>
+            <p><strong>Start Date:</strong> 2024-12-01</p>
+            <p><strong>End Date:</strong> 2024-12-03</p>
+
+            <button class="toggle-details-btn" onclick="toggleDetails(1)">
+              View Details
+            </button>
+
+            <div class="itinerary-schedule" id="schedule-1">
+              <div class="day-container">
+                <h5>Day 1: December 1, 2024 (Sunday)</h5>
+                <div class="time-slot">
+                  <p>09:00 AM - 12:00 PM: Arrival in Destination</p>
+                  <p>12:00 PM - 01:00 PM: Lunch</p>
+                  <p>01:30 PM - 04:30 PM: Explore</p>
+                  <p>05:00 PM - 07:00 PM: Dinner</p>
+                </div>
+              </div>
+              <div class="day-container">
+                <h5>Day 2: December 2, 2024 (Monday)</h5>
+                <div class="time-slot">
+                  <p>08:00 AM - 10:00 AM: Breakfast</p>
+                  <p>10:30 AM - 01:00 PM: Visit the Cathedral</p>
+                  <p>01:30 PM - 03:00 PM: Shopping for Souvenirs</p>
+                  <p>03:30 PM - 05:00 PM: Visit the Garden</p>
+                  <p>07:00 PM - 09:00 PM: Dinner</p>
+                </div>
+              </div>
+              <div class="day-container">
+                <h5>Day 3: December 3, 2024 (Tuesday)</h5>
+                <div class="time-slot">
+                  <p>08:00 AM - 10:00 AM: Breakfast</p>
+                  <p>10:30 AM - 12:00 PM: Visit the Park</p>
+                  <p>12:30 PM: Departure</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sample Itinerary #2 -->
+          <div class="itinerary-sample">
+            <h3>Itinerary ID #2</h3>
+            <p><strong>Client Name:</strong> Name</p>
+            <p><strong>Destination:</strong> Destination</p>
+            <p><strong>Duration:</strong> 3 Days, 2 Nights</p>
+            <p><strong>Lodging:</strong> Hotel</p>
+            <p><strong>Start Date:</strong> 2024-12-10</p>
+            <p><strong>End Date:</strong> 2024-12-16</p>
+
+            <button class="toggle-details-btn" onclick="toggleDetails(2)">
+              View Details
+            </button>
+
+            <div class="itinerary-schedule" id="schedule-2">
+              <div class="day-container">
+                <h5>Day 1: December 10, 2024 (Wednesday)</h5>
+                <div class="time-slot">
+                  <p>09:00 AM - 11:00 AM: Arrival</p>
+                  <p>11:30 AM - 01:00 PM: Lunch</p>
+                  <p>01:30 PM - 04:30 PM: Explore</p>
+                  <p>07:00 PM - 09:00 PM: Dinner</p>
+                </div>
+              </div>
+              <div class="day-container">
+                <h5>Day 2: December 11, 2024 (Thursday)</h5>
+                <div class="time-slot">
+                  <p>08:00 AM - 10:00 AM: Breakfast</p>
+                  <p>10:30 AM - 12:30 PM: Visit 1</p>
+                  <p>01:00 PM - 03:00 PM: Visit the Village</p>
+                  <p>07:00 PM - 09:00 PM: Dinner</p>
+                </div>
+              </div>
+              <div class="day-container">
+                <h5>Day 3: December 12, 2024 (Friday)</h5>
+                <div class="time-slot">
+                  <p>08:00 AM - 10:00 AM: Breakfast</p>
+                  <p>10:30 AM - 12:00 PM: Departure</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      // JavaScript to toggle the visibility of itinerary details
+      function toggleDetails(itineraryId) {
+        const schedule = document.getElementById(`schedule-${itineraryId}`);
+        const button = event.target;
+
+        // Toggle visibility of the day containers
+        if (
+          schedule.style.display === "none" ||
+          schedule.style.display === ""
+        ) {
+          schedule.style.display = "block";
+          button.textContent = "Hide Details";
+        } else {
+          schedule.style.display = "none";
+          button.textContent = "View Details";
+        }
+      }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Get the current URL path
+        const currentPath = window.location.pathname;
+
+        // Select all <a> elements in the sidebar
+        const menuLinks = document.querySelectorAll(".menu a");
+
+        // Loop through the links and compare their href with the current path
+        menuLinks.forEach((link) => {
+          if (link.getAttribute("href") === currentPath) {
+            // Add the active class to the parent <li>
+            link.parentElement.classList.add("active");
+          }
+        });
+
+        fetch("../PHP/get_itineraries.php") // Replace with your actual API endpoint
+          .then((response) => response.json())
+          .then((itineraryData) => {
+            console.log(itineraryData);
+            const container = document.querySelector(
+              ".itinerary-output-container"
+            );
+            container.innerHTML = ""; // Clear the existing content
+
+            itineraryData.forEach((itinerary) => {
+              const itineraryElement = document.createElement("div");
+              itineraryElement.classList.add("itinerary-sample");
+
+              // Create the header and basic info
+              const itineraryHeader = `
+        <h3>Itinerary ID #${itinerary.itinerary_id}</h3>
+        <p><strong>Client Name:</strong> ${itinerary.client_name}</p>
+        <p><strong>Destination:</strong> ${itinerary.destination}</p>
+        <p><strong>Duration:</strong> ${getDuration(
+          itinerary.start_date,
+          itinerary.end_date
+        )}</p>
+        <p><strong>Lodging:</strong> ${itinerary.lodging}</p>
+        <p><strong>Start Date:</strong> ${formatDate(itinerary.start_date)}</p>
+        <p><strong>End Date:</strong> ${formatDate(itinerary.end_date)}</p>
+      `;
+
+              // Create the button to toggle details
+              const toggleButton = `
+        <button class="toggle-details-btn" onclick="toggleDetails(${itinerary.itinerary_id})">
+          View Details
+        </button>
+      `;
+
+              // Create the itinerary schedule (days) with tables
+              let itinerarySchedule = "";
+              if (itinerary.itinerary_days.length) {
+                itinerary.itinerary_days.forEach((day) => {
+                  const dayTable = `
+          <div class="day-container">
+            <h5>Day ${day.day_number}: ${formatDate(day.created_at)}</h5>
+            <table class="activity-table">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Activity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center; font-weight: bold;">${formatTime(
+                    day.start_time
+                  )} - ${formatTime(day.end_time)}</td>
+                  <td>${day.activity || ""}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        `;
+                  itinerarySchedule += dayTable;
+                });
+
+                // Append the HTML to the itinerary element
+                itineraryElement.innerHTML =
+                  itineraryHeader +
+                  toggleButton +
+                  `
+                    <div class="itinerary-schedule" id="schedule-${itinerary.itinerary_id}">
+                    ${itinerarySchedule}
+                    </div>
+                `;
+
+                // Append the generated itinerary element to the container
+                container.appendChild(itineraryElement);
+              }
+            });
+          })
+          .catch((error) =>
+            console.error("Error fetching itinerary data:", error)
+          );
+
+        // Helper function to calculate duration
+        function getDuration(startDate, endDate) {
+          const start = new Date(startDate);
+          const end = new Date(endDate);
+          const diffTime = Math.abs(end - start);
+          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+          const nights = diffDays - 1; // For the duration, nights = days - 1
+          return `${diffDays} Days, ${nights} Nights`;
+        }
+
+        // Helper function to format date
+        function formatDate(dateString) {
+          const options = { year: "numeric", month: "long", day: "numeric" };
+          return new Date(dateString).toLocaleDateString(undefined, options);
+        }
+
+        // Helper function to format time
+        function formatTime(timeString) {
+          const [hours, minutes, seconds] = timeString.split(":");
+          return `${hours}:${minutes} ${+hours > 11 ? "PM" : "AM"}`;
+        }
+
+        // Function to toggle itinerary details (Example)
+        function toggleDetails(itineraryId) {
+          const schedule = document.getElementById(`schedule-${itineraryId}`);
+          if (schedule.style.display === "none") {
+            schedule.style.display = "block";
+          } else {
+            schedule.style.display = "none";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
